@@ -1,0 +1,33 @@
+{
+    "Logo": true,
+    "Codio": false,
+    "Project": false,
+    "Tools": false,
+    "Education": false,
+    "File": false,
+    "Edit": false,
+    "Find": {
+      "Find in Project": false,
+      "Replace in Project": false
+    },
+    "View": {
+      "Go to call": false,
+      "File tree": false,
+      "Panels": false,
+      "Layouts": false,
+      "Editor theme": true,
+      "Wrap": false,
+      "Tab size": false,
+      "Soft tabs": false,
+      "Navigate within soft tabs": false
+    },
+    "Help": false,
+    "Run": {
+      "Configure": false
+    },
+    "Preview": {
+      "Configure": false
+    },
+    "Debugger": false,
+    "Status": true
+}
