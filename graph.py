@@ -1,4 +1,5 @@
 from mat import Mat
+from lst import Lst
 
 #################################################
 # Graph ADT implementation using adjacency matrix
