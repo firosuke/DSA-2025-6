@@ -8,6 +8,8 @@ def String:
     self._s = s
   def read(self, i) -> str:
     return self._s[i]
+  def size(self) -> int:
+    return len(self._s)
   def __str__(self) -> str: # The irony of this method
     return self._s
   def __repr__(self) -> str:
