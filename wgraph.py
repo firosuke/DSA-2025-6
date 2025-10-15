@@ -1,3 +1,6 @@
+from mat import Mat
+from lst import Lst
+
 ################################################
 # Weighted graph ADT implementation (as above) #
 ################################################
