@@ -1,3 +1,4 @@
+# FREEZE CODE BEGIN
 from __future__ import annotations
 
 from typing import TypeVar, Generic, List
@@ -83,10 +84,10 @@ class Lst(Generic[T]):
     n = randint(3, 10)
     for i in range(n):
       if random() < 0.3:
-        data.append(int(data[-1]))
+        data.append(int(data.read(data.size() - 1)))
       else:
-        x = int(data[-1] * (0.6 + 0.4 * random()) + randint(-5, 5))
+        x = int(data.read(data.size() - 1) * (0.6 + 0.4 * random()) + randint(-5, 5))
         data.append(abs(x) if positive_only else x)
     return data
 
-
+# FREEZE CODE END
