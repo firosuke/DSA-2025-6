@@ -1,3 +1,5 @@
+# FREEZE CODE BEGIN
+
 from typing import Optional, Generic, TypeVar
 from lst import Lst
 
@@ -6,6 +8,7 @@ T = TypeVar('T')
 #################################################
 # Queue ADT implementation, using circular list #
 #################################################
+
 class QueueC(Generic[T]):
 
   # Type annotations
@@ -100,3 +103,5 @@ class QueueC(Generic[T]):
     print(f"_start: {self._start}")
     print(f"_end: {self._end}")
     print(f"_capacity: {self._capacity}")
+
+# FREEZE CODE END
