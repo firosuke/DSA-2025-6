@@ -38,13 +38,11 @@ class Task:
   def __repr__(self) -> str:
     return str(self)
 
-
-# Other functions for generating random (queues) of tasks
-
-def generate(can_be_completed=False) -> Task:
-  name = chr(ord("A") + i)
-  is_high_priority = True if random() > 0.6 else False    
-  remaining_time = 0 if (can_be_completed and random() > 0.6) else randint(50, 400)
-  return Task(name, is_high_priority, remaining_time)
+  # Function for generating random task
+  def generate(can_be_completed=False) -> Task:
+    name = chr(ord("A") + i)
+    is_high_priority = True if random() > 0.6 else False    
+    remaining_time = 0 if (can_be_completed and random() > 0.6) else randint(50, 400)
+    return Task(name, is_high_priority, remaining_time)
 
 # FREEZE CODE END
