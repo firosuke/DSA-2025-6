@@ -41,12 +41,11 @@ class String:
         b = randint(0, len(o) - 1) 
         s.insert(i, c[b])
         s.insert(i, o[b])
-      elif r > 0.08:
+      elif r > 0.09:
         # Insert random letter
         s.insert(i, sample("abcdefgh", 1)[0])
       else:
         # Insert unmatched bracket
-        this_one_matched = False
         b = randint(0, len(o) - 1)
         s.insert(i, c[b] if random() > 0.5 else o[b])
     return String(f"\"{''.join(s)}\"")
