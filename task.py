@@ -42,7 +42,7 @@ class Task:
 
   # Function for generating random task
   def generate(can_be_completed=False) -> Task:
-    name = chr(ord("A") + i)
+    name = chr(ord("A") + randint(0, 25))
     is_high_priority = True if random() > 0.6 else False    
     remaining_time = 0 if (can_be_completed and random() > 0.6) else randint(50, 400)
     return Task(name, is_high_priority, remaining_time)
