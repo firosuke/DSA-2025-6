@@ -38,12 +38,13 @@ class String:
     # that is/is not matched appropriately.
     while True:
       this_one_matched = True
+      # Basically a context-free grammar of insertions:
       for _ in range(randint(0, 8)):
         i = randint(0, len(s))
         r = random() 
         if r > 0.6:
           # Insert matched bracket pair
-          b = randint(0, len(o) - 1) 
+          b = randint(0, len(o)) 
           s.insert(i, c[b])
           s.insert(i, o[b])
         elif r > 0.08:
@@ -52,7 +53,7 @@ class String:
         else:
           # Insert unmatched bracket
           this_one_matched = False
-          b = randint(0, len(o) - 1)
+          b = randint(0, len(o))
           s.insert(i, c[b] if random() > 0.5 else o[b])
       if matched==None or this_one_matched == matched:
         break
