@@ -59,7 +59,7 @@ class Stack(Generic[T]):
   # Generate method for testing (experimental)
   def generate(S: type, **params) -> Stack:  # Class method
     result: Stack[S] = Stack()
-    for _ in randint(0, 10):
+    for _ in range(randint(0, 10)):
       result.push(S.generate(**params))
     return result
 
