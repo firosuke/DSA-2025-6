@@ -12,7 +12,7 @@ def call_stack(f):
       pre = f"Line {y['line']}: "
       del y["line"]
     else:
-      pre = None
+      pre = ""
     xs = [str(v) for v in x]
     ys = [f"{k}={v}" for k, v in y.items()]
     argsstr = ", ".join(xs + ys)
