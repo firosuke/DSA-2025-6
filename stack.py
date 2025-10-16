@@ -58,9 +58,15 @@ class Stack(Generic[T]):
 
   # Generate method for testing (experimental)
   def generate(S: type, **params) -> Stack:  # Class method
+    if S == int:
+      p = "positive_only" in params and params["positive_only"]
     result: Stack[S] = Stack()
     for _ in range(randint(0, 10)):
-      result.push(S.generate(**params))
+      if S == int:
+        v = randint(3, 9) if p else randint(-9, 9)
+      else:
+        v = S.generate(**params)
+      result.push(v)
     return result
 
 # FREEZE CODE END
