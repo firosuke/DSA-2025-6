@@ -1,5 +1,3 @@
-# FREEZE CODE BEGIN
-
 from lst import Lst
 from typing import Generic, TypeVar
 
@@ -46,5 +44,3 @@ class Stack(Generic[T]):
 
   def __repr__(self) -> str:
     return str(self) 
-
-# FREEZE CODE END
