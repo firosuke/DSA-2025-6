@@ -1,4 +1,5 @@
 # FREEZE CODE BEGIN
+
 from __future__ import annotations
 
 from lst import Lst
@@ -58,9 +59,9 @@ class Queue(Generic[T]):
 
   # Generate method for testing (experimental)
   def generate(S: type, **params) -> Queue:  # Class method
-    result: Stack[T] = Stack()
-    for _ in randint(3, 10):
-      result.append(S.generate(**params))
+    result: Stack[S] = Stack()
+    for _ in randint(0, 10):
+      result.enqueue(S.generate(**params))
     return result
 
 # FREEZE CODE END
