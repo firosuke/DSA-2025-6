@@ -44,7 +44,7 @@ class String:
         r = random() 
         if r > 0.6:
           # Insert matched bracket pair
-          b = randint(0, len(o)) 
+          b = randint(0, len(o) - 1) 
           s.insert(i, c[b])
           s.insert(i, o[b])
         elif r > 0.08:
@@ -53,7 +53,7 @@ class String:
         else:
           # Insert unmatched bracket
           this_one_matched = False
-          b = randint(0, len(o))
+          b = randint(0, len(o) - 1)
           s.insert(i, c[b] if random() > 0.5 else o[b])
       if matched==None or this_one_matched == matched:
         break
