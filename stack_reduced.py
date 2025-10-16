@@ -48,4 +48,3 @@ class Stack(Generic[T]):
     return str(self) 
 
 # FREEZE CODE END
-
