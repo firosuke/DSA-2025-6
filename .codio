@@ -1,6 +1,6 @@
 {
     "commands": {
-        "Python REPL": "python3 safe_exit.py python3 -i {{filepath}}; exit"
+        "Python REPL": "python3 safe_exit.py python3 -i {{filepath}}; exit",
         //"Interactive menu": "python3 safe_exit.py python3 week1.py {{filepath}}; exit",
         "Check types": "python3 safe_exit.py mypy --strict --disallow-untyped-globals --disallow-redefinition --implicit-reexport --pretty {{filepath}}; exit"
     },
