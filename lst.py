@@ -80,7 +80,7 @@ class Lst(Generic[T]):
 
   # Generate method for testing (ints only)
   def generate(positive_only=False) -> Lst[int]:  # Class method
-    data = Lst(randint(-9, 9) + (12 if positive_only else 0))
+    data = Lst(randint(3 if positive_only else -9, 9))
     n = randint(3, 10)
     for i in range(n):
       if random() < 0.3:
