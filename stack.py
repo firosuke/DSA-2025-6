@@ -1,4 +1,6 @@
 from lst import Lst
+from string import String
+
 from typing iport Generic, TypeVar
 
 T = TypeVar('T')
@@ -51,3 +53,11 @@ class Stack(Generic[T]):
     
   def __repr__(self):
     return str(self)  
+
+  # Generate method for testing
+  def generate(positive_only=False) -> Stack[T]:  # Class method
+    result: Stack[T] = Stack()
+    result._data = Lst.generate()
+    result._size = result._data.size()
+    return result
+
