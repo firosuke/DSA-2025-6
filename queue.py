@@ -59,7 +59,7 @@ class Queue(Generic[T]):
 
   # Generate method for testing (experimental)
   def generate(S: type, **params) -> Queue:  # Class method
-    result: Stack[S] = Stack()
+    result: Queue[S] = Queue()
     for _ in randint(0, 10):
       result.enqueue(S.generate(**params))
     return result
