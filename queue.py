@@ -1,3 +1,4 @@
+# FREEZE CODE BEGIN
 from __future__ import annotations
 
 from lst import Lst
@@ -52,4 +53,6 @@ class Queue(Generic[T]):
     return f"Queue({str(self._data)[4:-1]})" 
     
   def __repr__(self):
-    return str(self) 
+    return str(self)
+    
+# FREEZE CODE END
