@@ -77,10 +77,8 @@ class Lst(Generic[T]):
       return False
     return self._data == other._data
 
-  # Generate method for testing
-  def generate(positive_only=False) -> Lst[T]:  # Class method
-    if T != int:
-      raise ValueError("Can only randomly generate lists of integers at the moment")
+  # Generate method for testing (ints only)
+  def generate(positive_only=False) -> Lst[int]:  # Class method
     data = Lst(randint(-9, 9) + (12 if positive_only else 0))
     n = randint(3, 10)
     for i in range(n):
