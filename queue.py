@@ -57,11 +57,18 @@ class Queue(Generic[T]):
   def __repr__(self):
     return str(self)
 
-  # Generate method for testing (experimental)
+
+# Generate method for testing (experimental)
   def generate(S: type, **params) -> Queue:  # Class method
+    if S == int:
+      p = "positive_only" in params and params["positive_only"]
     result: Queue[S] = Queue()
     for _ in range(randint(0, 10)):
-      result.enqueue(S.generate(**params))
+      if S == int:
+        v = randint(3, 9) if p else randint(-9, 9)
+      else:
+        v = S.generate(**params)
+      result.enqueue(v)
     return result
 
 # FREEZE CODE END
