@@ -1,3 +1,5 @@
+# FREEZE CODE BEGIN
+
 from mat import Mat
 from lst import Lst
 
@@ -68,3 +70,16 @@ class Graph:
 
   def __repr__(self) -> str:
     return str(self)  
+
+  # Randomly generate a graph
+  def generate() -> Graph:  # Class method
+    n = randint(2, 6)
+    V = [chr(ord("A") + i) for i in range(n)]
+    G = Graph(Lst(*V))
+    for i in range(n):
+      for j in range(n):
+        if i != j and random() > 0.5:
+          G.add_edge(V[i], V[j])
+    return G
+  
+# FREEZE CODE END
