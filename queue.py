@@ -1,5 +1,3 @@
-# FREEZE CODE BEGIN
-
 from __future__ import annotations
 
 from lst import Lst
@@ -70,5 +68,3 @@ class Queue(Generic[T]):
         v = S.generate(**params)
       result.enqueue(v)
     return result
-
-# FREEZE CODE END
