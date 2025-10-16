@@ -33,7 +33,7 @@ class String:
     c = ")}]>"
     s = []
     # Basically a context-free grammar of insertions:
-    for _ in range(randint(0, 8)):
+    for _ in range(randint(0, 12)):
       i = randint(0, len(s))
       r = random() 
       if r > 0.6:
