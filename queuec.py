@@ -1,5 +1,3 @@
-# FREEZE CODE BEGIN
-
 from typing import Optional, Generic, TypeVar
 from lst import Lst
 
@@ -103,5 +101,3 @@ class QueueC(Generic[T]):
     print(f"_start: {self._start}")
     print(f"_end: {self._end}")
     print(f"_capacity: {self._capacity}")
-
-# FREEZE CODE END
