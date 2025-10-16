@@ -1,6 +1,10 @@
-# Decorator to show call stack
+# Decorator to show call stack.
+
 # When calling a decorated function, pass an optional argument line=n 
-# to show the line number in the call stack
+# to show the line number in the call stack. This argument will not
+# be passed to the decorated function. Therefore, the decorated function 
+# must not rely on an optional argument called "line",
+# otherwise the decorator will not work properly.
 
 from stack import Stack
 
@@ -8,11 +12,11 @@ calls: Stack[str] = Stack()
 
 def call_stack(f):
   def g(*x, **y):
+    pre = ""
     if "line" in y:
-      pre = f"Line {y['line']}: "
+      if y['line'] != None:
+        pre = f"Line {y['line']}: "
       del y["line"]
-    else:
-      pre = ""
     xs = [str(v) for v in x]
     ys = [f"{k}={v}" for k, v in y.items()]
     argsstr = ", ".join(xs + ys)
