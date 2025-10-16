@@ -1,3 +1,5 @@
+# FREEZE CODE BEGIN
+from queue import Queue
 from random import random, randint
 
 ##############################################################################
@@ -49,3 +51,5 @@ def new_tasks(n: int, can_be_completed=False) -> Queue[Task]:
   for _ in full_range(1, n):
     result.enqueue(new_task(can_be_completed))
   return result
+
+# FREEZE CODE END
