@@ -56,6 +56,6 @@ class String:
           s.insert(i, c[b] if random() > 0.5 else o[b])
       if matched==None or this_one_matched == matched:
         break
-    return String("".join(s))
+    return String(f"\"{"".join(s)}\"")
 
 # FREEZE CODE END
