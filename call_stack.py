@@ -25,7 +25,7 @@ def call_stack(f):
     print(calls)
     v = f(*x, **y)
     calls.pop()
-    calls.push(pre + f"Returned: {v}")
+    calls.push(pre + f"↳returned: {v}")
     print(calls)
     calls.pop()
     return v
