@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from lst import Lst
-from typing iport Generic, TypeVar
+from typing import Generic, TypeVar
 
 T = TypeVar('T')
 
