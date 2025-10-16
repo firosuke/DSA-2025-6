@@ -1,4 +1,5 @@
 # FREEZE CODE BEGIN
+
 from queue import Queue
 from random import random, randint
 
@@ -40,16 +41,10 @@ class Task:
 
 # Other functions for generating random (queues) of tasks
 
-def new_task(can_be_completed=False) -> Task:
+def generate(can_be_completed=False) -> Task:
   name = chr(ord("A") + i)
   is_high_priority = True if random() > 0.6 else False    
   remaining_time = 0 if (can_be_completed and random() > 0.6) else randint(50, 400)
   return Task(name, is_high_priority, remaining_time)
-
-def new_tasks(n: int, can_be_completed=False) -> Queue[Task]:
-  result = Queue()
-  for _ in full_range(1, n):
-    result.enqueue(new_task(can_be_completed))
-  return result
 
 # FREEZE CODE END
