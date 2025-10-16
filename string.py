@@ -28,35 +28,27 @@ class String:
     return other._s == this._s
 
   # Generate method for testing
-  def generate(matched=None) -> String:  # Class method
-    # matched=None: don't care about bracketing.
-    # matched=True/False: result must (not) be matched.
+  def generate() -> String:  # Class method
     o = "({[<"
     c = ")}]>"
     s = []
-    # Crude approach: keep generating until we get something
-    # that is/is not matched appropriately.
-    while True:
-      this_one_matched = True
-      # Basically a context-free grammar of insertions:
-      for _ in range(randint(0, 8)):
-        i = randint(0, len(s))
-        r = random() 
-        if r > 0.6:
-          # Insert matched bracket pair
-          b = randint(0, len(o) - 1) 
-          s.insert(i, c[b])
-          s.insert(i, o[b])
-        elif r > 0.08:
-          # Insert random letter
-          s.insert(i, sample("abcdefgh", 1)[0])
-        else:
-          # Insert unmatched bracket
-          this_one_matched = False
-          b = randint(0, len(o) - 1)
-          s.insert(i, c[b] if random() > 0.5 else o[b])
-      if matched==None or this_one_matched == matched:
-        break
+    # Basically a context-free grammar of insertions:
+    for _ in range(randint(0, 8)):
+      i = randint(0, len(s))
+      r = random() 
+      if r > 0.6:
+        # Insert matched bracket pair
+        b = randint(0, len(o) - 1) 
+        s.insert(i, c[b])
+        s.insert(i, o[b])
+      elif r > 0.08:
+        # Insert random letter
+        s.insert(i, sample("abcdefgh", 1)[0])
+      else:
+        # Insert unmatched bracket
+        this_one_matched = False
+        b = randint(0, len(o) - 1)
+        s.insert(i, c[b] if random() > 0.5 else o[b])
     return String(f"\"{''.join(s)}\"")
 
 # FREEZE CODE END
