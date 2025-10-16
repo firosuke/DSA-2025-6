@@ -1,3 +1,5 @@
+from random import randint, random, sample
+
 ###############################################################################################
 # String wrapper(!) to prevent you from doing fancy Python stuff that I don't want you to use #
 ###############################################################################################
@@ -20,3 +22,23 @@ def String:
     if not isinstance(other, String):
       return False
     return other._s == this._s
+
+  # Generate method for testing
+  def generate() -> String:  # Class method
+    o = "({[<"
+    c = "({[<"
+    s = []
+    for _ in range(randint(0, 8)):
+      i = randint(0, len(s))
+      r = random() 
+      if r > 0.4:
+        b = randint(0, len(o) - 1) 
+        s.insert(i, c[b])
+        s.insert(i, o[b])
+      elif r > 0.1:
+        s.insert(i, sample("abcdefgh", 1)[0])
+      else:
+        b = randint(0, len(o) - 1)
+        s.insert(i, c[b] if random() > 0.5 else o[b])
+    return "".join(s)    
+
