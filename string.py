@@ -17,7 +17,7 @@ class String:
   def size(self) -> int:
     return len(self._s)
   def find(self, c) -> int:
-    return self._s.find(c)
+    return self._s.find(c._s)
   def __str__(self) -> str: # The irony of this method
     return f"String({self._s})"
   def __repr__(self) -> str:
