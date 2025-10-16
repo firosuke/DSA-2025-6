@@ -1,4 +1,5 @@
 # FREEZE CODE BEGIN
+
 from __future__ import annotations
 
 from random import randint, random, sample
@@ -46,6 +47,6 @@ class String:
         # Insert unmatched bracket
         b = randint(0, len(o) - 1)
         s.insert(i, c[b] if random() > 0.5 else o[b])
-    return "".join(s)    
+    return String("".join(s))
 
 # FREEZE CODE END
