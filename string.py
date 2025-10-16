@@ -34,12 +34,12 @@ class String:
     for _ in range(randint(0, 8)):
       i = randint(0, len(s))
       r = random() 
-      if r > 0.4:
+      if r > 0.6:
         # Insert matched bracket pair
         b = randint(0, len(o) - 1) 
         s.insert(i, c[b])
         s.insert(i, o[b])
-      elif r > 0.1:
+      elif r > 0.08:
         # Insert random letter
         s.insert(i, sample("abcdefgh", 1)[0])
       else:
