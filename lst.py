@@ -79,15 +79,20 @@ class Lst(Generic[T]):
     return self._data == other._data
 
   # Generate method for testing (ints only)
-  def generate(positive_only=False) -> Lst[int]:  # Class method
-    data = Lst(randint(3 if positive_only else -9, 9))
-    n = randint(3, 10)
-    for i in range(n):
-      if random() < 0.3:
-        data.append(int(data.read(data.size() - 1)))
-      else:
-        x = int(data.read(data.size() - 1) * (0.6 + 0.4 * random()) + randint(-5, 5))
-        data.append(abs(x) if positive_only else x)
+  def generate(S: type, **params) -> Lst:  # Class method
+    data: Lst[S] = Lst()
+    if S == int:
+      p = ("positive_only" in params and params["positive_only"])
+      data.append(randint(3 if p else -9, 9))
+      for i in range(randint(3, 10)):
+        if random() < 0.3:
+          data.append(int(data.read(data.size() - 1)))
+        else:
+          x = int(data.read(data.size() - 1) * (0.6 + 0.4 * random()) + randint(-5, 5))
+          data.append(abs(x) if p else x)
+    else:
+      for _ in range(randint(0, 10)):
+        data.append(S.generate(), **params)
     return data
 
 # FREEZE CODE END
