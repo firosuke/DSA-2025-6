@@ -29,7 +29,7 @@ class String:
   # Generate method for testing
   def generate() -> String:  # Class method
     o = "({[<"
-    c = "({[<"
+    c = ")}]>"
     s = []
     for _ in range(randint(0, 8)):
       i = randint(0, len(s))
