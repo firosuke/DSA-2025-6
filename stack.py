@@ -50,4 +50,11 @@ class Stack(Generic[T]):
     return f"Stack({str(self._data)[4:-1]})" 
     
   def __repr__(self):
-    return str(self)  
+    return str(self) 
+
+  # Generate method for testing
+  def generate(positive_only=False) -> Stack[T]:  # Class method
+    result: Stack[T] = Stack()
+    result._data = Lst.generate()
+    result._size = result._data.size()
+    return result
