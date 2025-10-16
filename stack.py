@@ -1,3 +1,5 @@
+# FREEZE CODE BEGIN
+
 from __future__ import annotations
 
 from lst import Lst
@@ -54,9 +56,11 @@ class Stack(Generic[T]):
   def __repr__(self):
     return str(self) 
 
-  # Generate method for testing
-  def generate(positive_only=False) -> Stack[T]:  # Class method
-    result: Stack[T] = Stack()
-    result._data = Lst.generate()
-    result._size = result._data.size()
+  # Generate method for testing (experimental)
+  def generate(S: type, **params) -> Stack:  # Class method
+    result: Stack[S] = Stack()
+    for _ in randint(0, 10):
+      result.push(S.generate(**params))
     return result
+
+# FREEZE CODE END
