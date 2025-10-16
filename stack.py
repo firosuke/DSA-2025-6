@@ -1,5 +1,3 @@
-# FREEZE CODE BEGIN
-
 from __future__ import annotations
 
 from lst import Lst
@@ -68,5 +66,3 @@ class Stack(Generic[T]):
         v = S.generate(**params)
       result.push(v)
     return result
-
-# FREEZE CODE END
