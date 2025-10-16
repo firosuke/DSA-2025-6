@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from lst import Lst
 from typing import Generic, TypeVar
+from random import randint
 
 T = TypeVar('T')
 
@@ -54,5 +55,12 @@ class Queue(Generic[T]):
     
   def __repr__(self):
     return str(self)
-    
+
+  # Generate method for testing (experimental)
+  def generate(S: type, **params) -> Queue:  # Class method
+    result: Stack[T] = Stack()
+    for _ in randint(3, 10):
+      result.append(S.generate(**params))
+    return result
+
 # FREEZE CODE END
