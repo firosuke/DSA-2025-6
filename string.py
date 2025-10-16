@@ -1,3 +1,6 @@
+# FREEZE CODE BEGIN
+from __future__ import annotations
+
 from random import randint, random, sample
 
 ###############################################################################################
@@ -45,3 +48,4 @@ class String:
         s.insert(i, c[b] if random() > 0.5 else o[b])
     return "".join(s)    
 
+# FREEZE CODE END
