@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from lst import Lst
 from typing iport Generic, TypeVar
 
