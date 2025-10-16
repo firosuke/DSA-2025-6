@@ -32,7 +32,7 @@ class QueueC(Generic[T]):
 
 
   # Private methods
-  def resize_capacity(self, new_capacity: int) -> None:
+  def _resize_capacity(self, new_capacity: int) -> None:
     new_data = Lst()
 
     # Append the existing data into the new list
@@ -53,7 +53,7 @@ class QueueC(Generic[T]):
   # Public methods
   def enqueue(self, value: T) -> None:
     if self._n == self._capacity:
-      self.resize_capacity(self._capacity * 2)
+      self._resize_capacity(self._capacity * 2)
     
     self._end = (self._end + 1) % self._capacity
 
