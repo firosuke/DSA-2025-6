@@ -1,5 +1,7 @@
 # FREEZE CODE BEGIN
 
+from __future__ import annotations
+
 from queue import Queue
 from random import random, randint
 
