@@ -1,5 +1,3 @@
-# FREEZE CODE BEGIN
-
 from __future__ import annotations
 
 from queue import Queue
@@ -46,5 +44,3 @@ class Task:
     is_high_priority = True if random() > 0.6 else False    
     remaining_time = 0 if (can_be_completed and random() > 0.6) else randint(50, 400)
     return Task(name, is_high_priority, remaining_time)
-
-# FREEZE CODE END
