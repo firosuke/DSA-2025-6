@@ -25,7 +25,7 @@ class String:
   def __eq__(self, other) -> bool:
     if not isinstance(other, String):
       return False
-    return other._s == this._s
+    return other._s == self._s
 
   # Generate method for testing
   def generate() -> String:  # Class method
