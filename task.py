@@ -31,6 +31,9 @@ class Task:
   def is_complete(self) -> bool:
     return self._remaining_time == 0  
 
+  def is_high_priority(self) -> bool:
+    return self._is_high_priority
+  
   # Display methods
   def __str__(self) -> str:
     return f"Task({self._name}, {self._is_high_priority}, {self._remaining_time})"
