@@ -43,3 +43,15 @@ class Node(Generic[T]):
 
   def __repr__(self):
     return str(self)
+
+def show_tree_links(node: Optional[Node], prefix: str = "", is_left: bool = True) -> None:
+    if node is None:
+        return
+    if node._right:
+        new_prefix = prefix + ("│   " if is_left else "    ")
+        print_tree(node._right, new_prefix, False)
+    connector = "└── " if is_left else "┌── "
+    print(prefix + connector + str(node._value))
+    if node._left:
+        new_prefix = prefix + ("    " if is_left else "│   ")
+        print_tree(node._left, new_prefix, True)
