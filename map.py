@@ -4,7 +4,7 @@ from lst import Lst
 K = TypeVar('K')
 V = TypeVar('V')
 
-class Map[Generic[K], Generic[V]]:
+class Map(Generic[K, V]):
   _data: dict[T]
   def __init__(self, *kvpairs):
     self._data = {}
