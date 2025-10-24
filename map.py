@@ -5,7 +5,7 @@ K = TypeVar('K')
 V = TypeVar('V')
 
 class Map(Generic[K, V]):
-  _data: dict[T]
+  _data: dict[K, V]
   def __init__(self, *kvpairs):
     self._data = {}
     if kvpairs:
