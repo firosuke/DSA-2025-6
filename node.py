@@ -38,7 +38,7 @@ class Node(Generic[T]):
   
   def __str__(self):
     v = self._value
-    v = f'"{v}"' if isinstance(v, str)
+    v = f'"{v}"' if isinstance(v, str) else str(v)
     return f"Node({v}, {str(self._left)}, {str(self._right)})"
 
   def __repr__(self):
