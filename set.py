@@ -3,7 +3,7 @@ from lst import Lst
 
 T = TypeVar('T')
 
-class Set[Generic[T]]:
+class Set(Generic[T]):
   _data: set[T]
   def __init__(self):
     self._data = set()
