@@ -1,4 +1,4 @@
-from typing import Set as set, TypeVar, generic
+from typing import Set as set, TypeVar, Generic
 from lst import Lst
 
 T = TypeVar('T')
