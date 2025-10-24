@@ -9,36 +9,40 @@ T = TypeVar('T')
 ####################################
 class Link(Generic[T]):
   # Type annotations
-  _value: T
+  _value: Optional[T]
   _next: Optional[Link[T]]  
 
-  def __init__(self, value: T, next: Optional[Link[T]]):
+  def __init__(self, value: Optional[T]=None, next: Optional[Link[T]]=None):
     self._value = value
     self._next = next
 
-  def set_value(selt, value: T) -> None:
+  def set_value(self, value: T) -> None:
     self._value = value
 
-  def get_value(selt) -> T:
+  def get_value(self) -> T:
     return self._value
 
-  def set_next(selt, next: Link[T]) -> None:
+  def set_next(self, next: Link[T]) -> None:
     self._next = next
 
-  def get_next(selt) -> Optional[Link[T]]:
+  def get_next(self) -> Optional[Link[T]]:
     return self._next
 
   def __str__(self):
-    return f"Link({self._value}, {str(self._next)})"   # recursively calling str(self._next)
+    v = f'"{self._value}"' if isinstance(self._value, str) else str(self._value)
+    return f"Link({v}, {str(self._next)})"   # recursively calling str(self._next)
 
   def __repr__(self):
     return str(self)  
 
-  def show_all_links(self):
+
+def show_all_links(self):
     result_strings = []
     current = self
     while current != None:
-      result_strings.append(f"Link({current._value}, {'·-' if current._next else None})")
+      v = f'"{current._value}"' if isinstance(current._value, str) else str(current._value)
+
+      result_strings.append(f"Link({v}, {'·-' if current._next else None})")
       if current._next:
         result_strings.append("-> ")
       current = current._next
