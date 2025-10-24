@@ -1,4 +1,4 @@
-from typing import Dict as dict, TypeVar, generic
+from typing import Dict as dict, TypeVar, Generic
 from lst import Lst
 
 K = TypeVar('K')
