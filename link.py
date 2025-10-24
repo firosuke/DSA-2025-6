@@ -49,3 +49,21 @@ def show_all_links(self):
 
     result_string = "".join(result_strings)
     print(result_string)
+
+def linked_list_from_input():
+  D = Link() # no data. "next" is None, but will become the first actual link (if there is any data)
+  end = D
+
+  while True:
+    string = input("Enter a string, or press Enter to stop: ")
+    if string == "":   # (Can also write "if not string:" in Python.)
+      break
+    # Create a new link
+    new = Link()
+    new.set_value(string)
+    # Attach it after "end"
+    end.set_next(new)
+    # Now make "end" refer to the new node
+    end = new
+
+  return D.get_next()
