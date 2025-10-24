@@ -9,11 +9,11 @@ T = TypeVar('T')
 ####################################
 class Node(Generic[T]):
   # Type annotations
-  _value: T
+  _value: Optional[T]
   _left: Optional[Link[T]]
   _right: Optional[Link[T]]
 
-  def __init__(self, value: T, left: Optional[Node[T]], right: Optional[Node[T]]):
+  def __init__(self, value: Optional[T]=None, left: Optional[Node[T]]=None, right: Optional[Node[T]]=None):
     self._value = value
     self._left = left
     self._right = right
