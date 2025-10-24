@@ -44,7 +44,7 @@ class Node(Generic[T]):
   def __repr__(self):
     return str(self)
 
-def show_tree_links(node: Optional[Node], prefix: str = "", is_left: bool = True) -> None:
+def show_all_nodes(node: Optional[Node], prefix: str = "", is_left: bool = True) -> None:
     if node is None:
         return
     if node._right:
