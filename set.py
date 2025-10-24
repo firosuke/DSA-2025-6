@@ -1,10 +1,9 @@
-from typing import Set as set, TypeVar, Generic
+from typing import TypeVar, Generic
 from lst import Lst
 
 T = TypeVar('T')
 
 class Set(Generic[T]):
-  _data: set[T]
   def __init__(self):
     self._data = set()
   def add(self, v):
