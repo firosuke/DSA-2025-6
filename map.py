@@ -24,6 +24,6 @@ class Map(Generic[K, V]):
   def keys(self):
     return Lst(*list(self._data.keys()))
   def __str__(self):
-    return "Map(" + str(list(Lst(k, v) for k, v in self._data.items())) + ")"
+    return "Map(Lst(" + str(list(Lst(k, v) for k, v in self._data.items()))[1:-1] + "))"
   def __repr__(self):
     return str(self)
