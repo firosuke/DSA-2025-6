@@ -20,7 +20,7 @@ class Map(Generic[K, V]):
           v = thing
           self._data[k] = v
           this_is_a_key = True
-      if this_is_a_key = False:
+      if this_is_a_key == False:
         print(f"*** Warning: Last key had no matching value: {k}")
   def set(self, k, v):
     self._data[k] = v
