@@ -9,9 +9,19 @@ class Map(Generic[K, V]):
   def __init__(self, *kvpairs):
     self._data = {}
     if kvpairs:
-      for l in kvpairs:
-        k, v = l.read(0), l.read(1)
-        self._data[k] = v
+      this_is_a_key = True
+      k = None
+      v = None
+      for thing in kvpairs:
+        if this_is_a_key:
+          k = thing
+          this_is_a_key = False
+        else:
+          v = thing
+          self._data[k] = v
+          this_is_a_key = True
+      if this_is_a_key = False:
+        print(f"*** Warning: Last key had no matching value: {k}")
   def set(self, k, v):
     self._data[k] = v
   def get(self, k):
