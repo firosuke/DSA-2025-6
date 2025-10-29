@@ -17,6 +17,6 @@ class Set(Generic[T]):
   def list(self):
     return Lst(*self._data)
   def __str__(self):
-    return str(self._data).capitalize()
+    return "Set(" + str(self._data)[1:-1] + ")"
   def __repr__(self):
     return str(self)
