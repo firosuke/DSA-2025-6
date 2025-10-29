@@ -17,6 +17,6 @@ class Set(Generic[T]):
   def list(self):
     return Lst(*self._data)
   def __str__(self):
-    return "Set(" + str(self._data)[1:-1] + ")"
+    return ("Set(" + str(self._data)[1:-1] + ")") if len(self._data) > 1 else "Set()"
   def __repr__(self):
     return str(self)
