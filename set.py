@@ -5,7 +5,7 @@ T = TypeVar('T')
 
 class Set(Generic[T]):
   def __init__(self, *vargs):
-    self._data = set(*vargs)
+    self._data = set(vargs)
   def add(self, v):
     self._data.add(v)
   def contains(self, v):
