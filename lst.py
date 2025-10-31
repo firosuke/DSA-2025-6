@@ -59,7 +59,7 @@ class Lst(Generic[T]):
       raise IndexError(f"Cannot read from index {i}")
 
   def get(self, i: int) -> T: # synonym
-    return self.get(i)
+    return self.read(i)
   
   def write(self, i: int, v: T) -> None:
     if 0 <= i < self._size:
