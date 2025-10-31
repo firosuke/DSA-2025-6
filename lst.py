@@ -58,12 +58,18 @@ class Lst(Generic[T]):
     else:
       raise IndexError(f"Cannot read from index {i}")
 
+  def get(self, i: int) -> T: # synonym
+    return self.get(i)
+  
   def write(self, i: int, v: T) -> None:
     if 0 <= i < self._size:
       self._data[i] = v
     else:
       raise IndexError(f"Cannot write to index {i}")
 
+  def set(self, i: int, v: T) -> None: # synonym
+    return self.write(i, v)
+  
   # Display methods
   def __str__(self) -> str:
     return "Lst(" + ", ".join((f"\"{str(v)}\"" if isinstance(v, str) else str(v)) for v in self._data) + ")"
