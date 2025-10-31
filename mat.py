@@ -35,10 +35,17 @@ class Mat(Generic[T]):
   # Public methods
   def read(self, i: int, j: int) -> T:
     return self._lofl.read(i).read(j)
+
+  def get(self, i: int, j: int) -> T: # synonym
+    self.read(i, j)
   
   def write(self, i: int, j: int, v: T) -> None:
     self._lofl.read(i).write(j, v)
 
+  def set(self, i: int, j: int, v: T) -> None: # synonym
+    self.write(i, j, v)
+  
+  
   # Display methods
   def __str__(self) -> str:
       return ("Mat(" + f"{self.height}, {self.width},\n    "
