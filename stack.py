@@ -54,6 +54,13 @@ class Stack(Generic[T]):
   def __repr__(self):
     return str(self) 
 
+  def pretty_print(self):
+    print("Stack:")
+    for i in full_range(0, self._size - 1):
+      self._data.read(i).pretty_print()
+      print()
+      
+
   # Generate method for testing (experimental)
   def generate(S: type, **params) -> Stack:  # Class method
     if S == int:
