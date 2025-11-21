@@ -1,4 +1,4 @@
-# FREEZE CODE BEGIN
+from __future__ import annotations
 
 from mat import Mat
 from lst import Lst
@@ -82,4 +82,3 @@ class Graph:
           G.add_edge(V[i], V[j])
     return G
   
-# FREEZE CODE END
