@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from mat import Mat
 from lst import Lst
+from full_range import full_range
 
 #################################################
 # Graph ADT implementation using adjacency matrix
