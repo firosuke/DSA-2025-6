@@ -56,11 +56,13 @@ class Stack(Generic[T]):
     return str(self) 
 
   def pretty_print(self):
-    print("Stack:")
-    for i in full_range(0, self._size - 1):
+    print("Stack:\nBottom:")
+    for i in full_range(0, self._size - 2):
       self._data.read(i).pretty_print()
-      print()
-      
+      print(",")
+    if self._size > 1:
+      self._data.read(self._size - 1).pretty_print()
+    print("Top")
 
   # Generate method for testing (experimental)
   def generate(S: type, **params) -> Stack:  # Class method
