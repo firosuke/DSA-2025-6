@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from lst import Lst
 from typing import Generic, TypeVar
+from full_range import full_range
 
 T = TypeVar('T')
 
