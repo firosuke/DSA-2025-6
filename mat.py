@@ -58,6 +58,10 @@ class Mat(Generic[T]):
   def __repr__(self) -> str:
     return str(self)
 
+  def pretty_print(self) -> None:
+    for i in range(self.height):
+        print(" ".join(str(self.read(i, j)) for j in range(self.width)))
+
 def generate(S: type, **params) -> Mat: # Class method
   rows = randint(2, 4)
   cols = randint(2, 4)
