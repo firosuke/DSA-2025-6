@@ -56,11 +56,11 @@ class Stack(Generic[T]):
     return str(self) 
 
   def pretty_print(self):
-    print("Stack:\nBottom:")
+    print("Stack:\nBottom")
     for i in full_range(0, self._size - 2):
       self._data.read(i).pretty_print()
       print(",")
-    if self._size > 1:
+    if self._size > 0:
       self._data.read(self._size - 1).pretty_print()
     print("Top")
 
