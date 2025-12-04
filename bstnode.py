@@ -8,7 +8,7 @@ V = TypeVar('V')
 ####################################
 # Node, to be used in binary trees #
 ####################################
-class BSTNode(Generic[K], Generic[V]):
+class BSTNode(Generic[K,V]):
   # Type annotations
   _key: Optional[K]
   _value: Optional[V]
