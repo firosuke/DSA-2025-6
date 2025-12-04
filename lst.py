@@ -84,6 +84,9 @@ class Lst(Generic[T]):
       return False
     return self._data == other._data
 
+  def pretty_print(self) -> None:
+    print(self)
+  
   # Generate method for testing (ints only)
   def generate(S: type, **params) -> Lst:  # Class method
     data: Lst[S] = Lst()
