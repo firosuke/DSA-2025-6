@@ -85,7 +85,7 @@ class Lst(Generic[T]):
     return self._data == other._data
 
   def pretty_print(self, word_list) -> None:
-    print("Lst(" + ", ".join(word_list.read(i) for i in self._data) + ")")
+    print("Lst(" + ", ".join('"' + str(word_list.read(i)) + '"' for i in self._data) + ")")
   
   # Generate method for testing (ints only)
   def generate(S: type, **params) -> Lst:  # Class method
