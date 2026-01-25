@@ -27,4 +27,4 @@ if __name__ == "__main__":
     #input_path = Path(sys.argv[1])
     #output_path = Path(sys.argv[2])
 
-    comment_out_test_calls(input_path, output_path)
+    comment_out_test_calls(input_file, output_file)
